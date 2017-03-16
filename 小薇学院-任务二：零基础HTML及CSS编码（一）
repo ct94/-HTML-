@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <link rel="stylesheet" href="style1.css" type="text/css"/>
+  <!-- <style type="text/css">
+    @import "./style1.css";
+  </style> -->
+</head>
+  <header>
+    <img src="bd_logo.png" width=200 height=70/>
+      <ul>
+        <li><a href="1">导航链接一</a></li>
+        <li><a href="2">导航链接二</a></li>
+        <li><a href="3">导航链接三</a></li>
+        <li><a href="4">导航链接四</a></li>
+      </ul>
+  </header>
+
+<div class="wrap">
+  <div class="body1">
+    <h2>文章一级标题</h2>
+    <h3>文章二级标题</h3>
+    <h5>文章作者 文章发表时间</h5>
+    <p>这是文章内容这是文章内容这是文章内容这是文章内容这是文章内容这是文这是文章内容这是文章内容这是文章内容这是文章内容这是文章内容这是文章内容</br>这是文章内容这是文章内容这是文章内容这是文章内容这是文章内容这是文章内容这是文章内容这是文章内容这是文章内容</br>这是文章内容这是文章内容<a href="www.baidu.com">这里有个链接，链接到www.baidu.com</a>这是文章内容这是文章内容这是文章内容这是文章内容这是文章内容这是文章内容这是文章内容这是文章内容这是文章内容这是文章内容</p>
+    <img src="./baidu.png">
+    <p>这是文章内容这是文章内容这是文章内容这是文章内容这是文章内容这是文章内容这是文章内容这是文章内容这是文章内容<strong>这里有粗体字</strong>这是文章内容这是文章内容这是文章内容这是文章内容这是文章内容这是文章内容</br>这是文章内容这是文章内容这是文章内容这是文章内容这是文章内容这是文章内容这是内容这是文章内容</br>这是文章内容这是文章内容这是文章内容这是文章内容这是文章内容这是文章内容这是文章内容这是文章内容这是文章内容这是文章内容这是文章内容这是文章内容<a href="www.baidu.com" target="_blank">这里有个链接，点击后打开新窗口链接到www.baidu.com</a>这是文章内容这是文章内容这是文章内容这是文章内容这是文章内容这是文章内容容这是文章内容</p>
+  </div>
+
+  <div class="body1">
+    <h2>另一篇文章一级标题</h2>
+    <h3>文章二级标题</h3>
+    <h5>文章作者 文章发表时间</h5>
+    <p>这是文章内容这是文章内容这是文章内容这是文章内容这是文章内容这是文章内容这是文章内容这是文章内容这是文章内容<strong>这里有粗体字</strong>这是文章内容这是文章内容这是文章内容这是文章内容这是文章内容这是文章内容</br>这是文章内容这是文章内容这是文章内容这是文章内容这是文章内容这是文章内容这是文章内容这是文章内容这是文章内容这是文章内容</br>这是文章内容这是文章内容这是文章内容这是文章内容这是文章内容这是文章内容这是文章内容这是文章内容这是文章内容这是文章内容这是文章内容这是文章内容<a href="www.baidu.com">这里有个链接，链接到www.baidu.com</a>这是文章内容这是文章内容这是文章内容这是文章内容这是文章内容这是文章内容这是文章内容这是文章内容这是文章内容这是文章内容</p>
+    <img src="./baidu.png">
+    <ul>
+      <li>列表项目一</li>
+      <li>列表项目二</li>
+      <li>列表项目三</li>
+    </ul>
+  </div>
+
+  <div class="body1">
+   <h1>图片</h1>
+    <figure>
+      <figcaption>好看的图片</figcaption>
+      <img src="flower.jpg" width="200" height="133">
+    </figure>
+    <figure>
+      <figcaption>好看的图片</figcaption>
+      <img src="flower.jpg" width="200" height="133">
+    </figure>
+    <figure>
+      <figcaption>好看的图片</figcaption>
+      <img src="flower.jpg" width="200" height="133">
+    </figure>
+    <figure>
+      <figcaption>好看的图片</figcaption>
+      <img src="flower.jpg" width="200" height="133">
+    </figure>
+
+  </div>
+
+  <div class="body1">
+    <h2>最后一篇文章一级标题</h2>
+    <h3>文章二级标题</h3>
+    <h5>文章作者 文章发表时间</h5>
+    <ol>
+      <li>排名1</li>
+      <li>排名2</li>
+      <li>排名3</li>
+    </ol>
+    <table border="1">
+      <caption>下面是一个表格,给表格加了一个border=“1”</caption>
+      <tr>
+        <th>表头</th>
+        <th>表头</th>
+        <th>表头</th>
+      </tr>
+      <tr>
+        <td>表内容单元格</td>
+        <td>表内容单元格</td>
+        <td><a href="">操作</a></td>
+      </tr>
+      <tr>
+        <td>表内容单元格</td>
+        <td>表内容单元格</td>
+        <td><a href="">操作</a></td>
+      </tr>
+      <tr>
+        <td>表内容单元格</td>
+        <td>表内容单元格</td>
+        <td><a href="">操作</a></td>
+      </tr>
+      <tr>
+        <td>表内容单元格</td>
+        <td>表内容单元格</td>
+        <td><a href="">操作</a></td>
+      </tr>
+      <tr class="trEnd">
+        <td>总计</td>
+        <td colspan="2">1000</td>
+      </tr>
+    </table>
+  </div>
+</div>
+
+  <div class="side">
+    <h2>这里以后是一个侧栏，这是侧栏的标题</h2>
+    <!--<h2>侧栏注册窗口标题</h2>-->
+    <form>
+      <div class="form1">请输入邮箱地址：<input type="email" placeholder="这是一个文本输入框"/></div>
+      <div class="tip">邮箱地址请按要求格式输入</div>
+      <div class="form1">请输入密码：<input type="password" placeholder="请输入密码"/></div>
+      <div class="form1"> 请重复输入密码：<input type="password" placeholder="请输入密码"/></div>
+      <div class="tip">密码请为6-16位英文数字</div>
+
+      <div class="form1">
+        <label>性别：</label>
+          <input type="radio" value="1" name="gender">
+        <label>男</label>
+          <input type="radio" value="2" name="gender">
+        <label>女</label>
+      </div>
+
+      <div class="form1">
+        <label>城市：</label>
+        <select>
+        <option value="北京" selected="北京">北京</option>
+        <option value="上海" >上海</option>
+        </select>
+      </div>
+
+      <div class="form1">
+        <label>爱好：</label>
+        <input type="checkbox" value="运动"/>
+        <label>运动</label>
+        <input type="checkbox" value="艺术"/>
+        <label>艺术</label>
+        <input type="checkbox" value="科学"/>
+        <label>科学</label>
+      </div>
+
+      <div class="form1">
+        <label>个人描述：</label>
+        <textarea rows="10" cols="100">这是一个多行输入框，输入您的个人描述
+        </textarea>
+      </div>
+
+      <input type="submit" class="btn" name="submit" value="确认提交">
+
+    </form>
+  </div>
+
+  <footer>
+    <p style="color:white" >版权所有&copy ct</p>
+  </footer>
+</body>
+</html>
