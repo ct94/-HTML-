@@ -1,42 +1,50 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<meta charset="UTF-8">
-	<title>task4</title>
-	<style type="text/css">
-		.cicle,.cicle2{
-			width:50px;
-			height:50px;
-			background-color: #fc0;
-			/*display: inline;*/
-			/*float: left;*/
-		}
-		.cicle{
-			border-radius:200px 0 0;
-			position:relative;
-			left: 823px;top:250px;
-		}
-		.cicle2{
-			border-radius:0 0 200px 0;
-			position:relative;
-			left: 480px;top:50px;
-		}
-		.main{
-			width:400px;
-			height: 200px;
-			background-color: #ccc;
-			margin: 0 auto;
-		}
-/*		.wrap{
-			margin: 0 auto;
-		}*/
-	</style>
+    <meta charset="UTF-8">
+    <title>task4</title>
+    <style type="text/css">
+        .wrap{
+            width:400px;
+            height: 200px;
+            background-color: #ccc;
+            position: relative;
+            /*transform: translate(50%,50%);*/
+        }
+        .cicle,.cicle2{
+            width:50px;
+            height:50px;
+            position: absolute;
+            background-color: #fc0;
+        }
+        .cicle{
+            border-radius:200px 0 0;
+            right: 0px;bottom:0px;
+        }
+
+        /*左上圆*/
+        .cicle2{
+            border-radius:0 0 200px 0;
+            left: 0px;top:0px;
+        }
+        .main{/*垂直居中*/
+            margin: auto;
+            position: absolute;
+            left: 50%;top: 50%;
+            -webkit-transform: translate(-50%,-50%);
+            -ms-transform: translate(-50%,-50%);
+            transform: translate(-50%,-50%);
+        }
+        body{margin:0;}
+    </style>
 </head>
 <body>
-	<wrap>
-	<div class="cicle"></div>
-	<div class="cicle2"></div>
-	<div class="main"></div>
-	</wrap>
+<div class="main">
+    <div class="wrap">
+    <div class="cicle"></div>
+    <div class="cicle2"></div>
+    </div>
+</div>
+
 </body>
 </html>
