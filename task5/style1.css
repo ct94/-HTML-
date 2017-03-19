@@ -24,8 +24,9 @@ header a{
 	color: white;
 	/*选中导航栏后显示背景块色*/
 	display: inline-block;
-	width: 65px;height: 74px;
+	width: 80px;height: 74px;
 	line-height: 74px;/*垂直居中*/
+	text-align: center;
 }
 header a:hover{
 	background-color: #808080;
