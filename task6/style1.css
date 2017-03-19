@@ -1,0 +1,68 @@
+body{
+    width: 890px;height: 1386px;
+    background: white;
+    margin: 0 auto;
+    padding: 0 45px;
+}
+header{font-family:"黑体";font-size:12px;position: relative}
+hr{margin: 0;}
+.left{
+    margin-top: 36px;
+    background: url("1.jpg");
+    width: 641px;height: 301px;
+    display: inline-block;
+}
+.right{
+    margin-top: 36px;
+    float: right;
+}
+.title1{
+    text-transform: capitalize;
+    text-decoration: underline;
+    font-size: 24px;font-family:'微软雅黑';
+    color:#000;line-height: 40px
+}
+.text1{
+    color:#cc8091;font-family:'微软雅黑';
+}
+
+.div2{
+    overflow: hidden;
+}
+.title2{
+    font-size: 16px;font-weight: bold;
+    text-decoration: underline;
+}
+.p1{
+    font-size: 12px;font-family: '宋体';
+    color: #767777;
+    line-height: 16px;
+}
+.p2{
+    font-weight: bold;font-family: 'Arial Black';
+    margin:0;
+}
+.wwh{
+    float: left;
+    /*display: inline-block;*/
+    margin-right: 15px;margin-top: 30px;
+    width: 196px;
+}
+.qian{
+    font-size: 70px;color:#f5e327;font-family:'微软雅黑';
+    float: left;
+    padding:0 10px 0 0;
+}
+.left2{
+    /*float: left;*/
+    margin-right: 500px;
+    display: inline-block;
+}
+.right2{
+    float: right;
+    display: inline-block;
+}
+.rightTop{
+    width: 458px;height: 61px;
+    background: url("2.png");
+}
