@@ -1,0 +1,132 @@
+body{
+	margin: 0px;
+	font-family: "Microsoft Yahei";
+	background-color:gainsboro;
+}
+header{
+	color: white;
+	background-color: #333;
+}
+header ul{
+	display: inline;
+	float: right;
+	margin: 0px;
+}
+header li{
+	margin:20px;
+	float:left;
+	color: black;
+}
+header a{
+	text-decoration-line: none;
+	font-family: "Microsoft MHei";
+	font-size: 13px;
+	color: white;
+	text-align: center;
+}
+header a:visited{
+	color: gray;
+}
+.left{
+	float: left;
+	margin-right: 360px;
+}
+.body1{
+	 background-color: white;
+	 box-shadow: 2px 2px 1.5px 1px gray;
+	 padding: 15px;
+	 margin: 20px;
+	overflow: hidden;
+ }
+.body1 ul{
+	list-style:none;
+}
+.bodyPic{
+	float: left;
+	margin: 10px;padding: 11px;
+	border-color: #999999;
+}
+p{
+	text-indent:2em;
+	line-height:180%;
+}
+h3,h5{
+	color: gray;
+}
+figure{
+	width: 200px;
+	margin:20px 1.5cm;
+	padding: 18px;
+	border: 1px solid;
+	text-align: center;
+}
+table{
+	width:100%;
+	border-collapse: collapse;
+	font-size: 13px;
+}
+caption{
+	text-align: left;
+	font-size: 15px;
+}
+th{
+	text-align:left;
+	background-color: #333333;
+	color: white;
+}
+th,td{
+	padding: 5px;
+}
+.trEnd{
+	color: black;
+	background-color: rgba(128, 128, 128, 0.26);
+	font-weight: bold;
+}
+.side{
+	position: relative;
+}
+.sidebody{
+	background-color: white;
+	position: absolute;
+	box-shadow: 2px 2px 1.5px 1px gray;
+	width:300px;
+	right: 20px;top: 20px;
+	padding: 20px;
+}
+.tips{
+	color: gray;
+}
+.side table{
+	font-size: 14px;
+	font-family: "Microsoft Yahei";
+	font-weight: bold;
+}
+.side td:nth-child(1){
+	text-align: right;
+}
+.sideTitle{
+	border-left:thick solid #808080;
+	padding: 10px;
+}
+.btn{
+	display: block;
+	width: 100% ;
+	height: 35px;
+	margin: 0px auto;
+	background:dodgerblue;
+	color: white;
+	border-radius: 10px;
+}
+footer{
+	background: black;
+	text-align: center;
+	height: 100px;
+	width: 100%;
+	margin-bottom: 0;
+	overflow: hidden;
+}
+.copyright{
+	/*height:100px;*/
+	line-height: 100px;
+	margin: 0;
+}
