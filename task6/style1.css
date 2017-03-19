@@ -48,21 +48,49 @@ hr{margin: 0;}
     margin-right: 15px;margin-top: 30px;
     width: 196px;
 }
+
+.div3{
+    position: relative;
+}
 .qian{
     font-size: 70px;color:#f5e327;font-family:'微软雅黑';
     float: left;
     padding:0 10px 0 0;
 }
 .left2{
-    /*float: left;*/
+    float: left;
     margin-right: 500px;
-    display: inline-block;
+    /*display: inline-block;*/
 }
 .right2{
-    float: right;
-    display: inline-block;
+    position: absolute;right: 0;top: 0;
+    /*float: right;*/
+    /*display: inline-block;*/
+    width: 458px;height: 600px
 }
 .rightTop{
-    width: 458px;height: 61px;
+    width: 458px;height: 257px;
     background: url("2.png");
+    position: absolute;
+    right: 0;top: 0;
+}
+.rtBar{
+    background-color: rgba(0,0,0,0.5);
+    /*opacity: 0.5;*/
+    width: 458px;height: 61px;
+    position: absolute;
+    bottom: 0;left: 0
+}
+.textBorder{
+    border-left: 3px solid #72b16a;height: 44px; 
+    margin:8.5px 0 8.5px 30px;
+    padding-left: 10px;
+    line-height: 44px;
+    /*position: absolute;bottom: 0;*/
+}
+.rightDown{
+    width: 459px;height: 318px;
+    background-color: gray;
+    position: absolute;
+    bottom: 0;right: 0;
 }
