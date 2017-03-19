@@ -13,7 +13,7 @@ header ul{
 	margin: 0px;
 }
 header li{
-	margin:20px;
+	margin:0 15px;
 	float:left;
 	color: black;
 }
@@ -22,10 +22,13 @@ header a{
 	font-family: "Microsoft MHei";
 	font-size: 13px;
 	color: white;
-	text-align: center;
+	/*选中导航栏后显示背景块色*/
+	display: inline-block;
+	width: 65px;height: 74px;
+	line-height: 74px;/*垂直居中*/
 }
-header a:visited{
-	color: gray;
+header a:hover{
+	background-color: #808080;
 }
 .left{
 	float: left;
