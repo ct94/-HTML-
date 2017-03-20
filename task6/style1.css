@@ -39,7 +39,7 @@ hr{margin: 0;}
     line-height: 16px;
 }
 .p2{
-    font-weight: bold;font-family: 'Arial Black';
+    font-family:'黑体';font-weight: bold;
     margin:0;
 }
 .wwh{
@@ -51,6 +51,8 @@ hr{margin: 0;}
 
 .div3{
     position: relative;
+    margin-bottom: 20px;
+    overflow: hidden;
 }
 .qian{
     font-size: 70px;color:#f5e327;font-family:'微软雅黑';
@@ -90,7 +92,37 @@ hr{margin: 0;}
 }
 .rightDown{
     width: 459px;height: 318px;
-    background-color: gray;
+    background-color: #eeedd6;
     position: absolute;
     bottom: 0;right: 0;
+}
+.rd{
+    width: 260px;height: 160px;
+    background-color:#d45d5c;
+    position: absolute;left: 0;bottom: 0;
+}
+.rdText{
+    width: 236px;height: 90px;
+    padding: 38px 12px;
+    position: relative;
+}
+.rdtext2{
+    line-height: 40px;
+    color: #5a5b5b;
+    padding: 15px;
+    font-family: '宋体';
+}
+.rdright{
+    float: right;width: 180px;
+    font-size: 14px;font-family: '黑体';line-height: 16px;
+    padding: 10px;
+}
+.right2Down{
+    width: 459px;height: 160px;
+    position: absolute;bottom:0;
+}
+.triUp{
+    width: 0;height: 0;
+    border-left: 6px solid transparent;border-right:6px solid transparent;
+    border-bottom: 10px solid #10456b;
 }
