@@ -55,7 +55,8 @@ hr{margin: 0;}
     overflow: hidden;
 }
 .qian{
-    font-size: 70px;color:#f5e327;font-family:'微软雅黑';
+     color:#f5e327;
+    font: 70px 微软雅黑;
     float: left;
     padding:0 10px 0 0;
 }
@@ -107,22 +108,36 @@ hr{margin: 0;}
     position: relative;
 }
 .rdtext2{
-    line-height: 40px;
     color: #5a5b5b;
     padding: 15px;
     font-family: '宋体';
+}
+.rdtext2 p:before{
+    content: '\25B2';
+    color:#10456b;
+    font-size: 10px;margin-right: 5px;
 }
 .rdright{
     float: right;width: 180px;
     font-size: 14px;font-family: '黑体';line-height: 16px;
     padding: 10px;
 }
+.rdright:before{
+    content: '“';
+    font-size: 72px;color:#d45d5c;
+    position: relative;left: -40px;bottom: -35px;
+}
+.rdright:after{
+    content: '”';
+    font-size: 72px;color:#d45d5c;float: right;margin: 30px -20px 0 0;
+    /*position: relative;left: 90px;bottom: -30px;*/
+}
 .right2Down{
     width: 459px;height: 160px;
     position: absolute;bottom:0;
 }
-.triUp{
-    width: 0;height: 0;
-    border-left: 6px solid transparent;border-right:6px solid transparent;
-    border-bottom: 10px solid #10456b;
-}
+/*.triUp{*/
+    /*width: 0;height: 0;*/
+    /*border-left: 6px solid transparent;border-right:6px solid transparent;*/
+    /*border-bottom: 10px solid #10456b;*/
+/*}*/
