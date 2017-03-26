@@ -52,20 +52,24 @@ function getData() {
  * 返回一个排序后的数组
  */
 function sortAqiData(data) {
-  data.sort();//TODO
+  data.sort(function(a,b){
+    return a[1]-b[1];
+  });//TODO
   return data;
 }
 
 /**
  * render
- * 将排好序的城市及空气质量指数，输出显示到id位resort的列表中
+ * 将排好序（从小到大）的城市及空气质量指数，输出显示到id位resort的列表中
  * 格式见ul中的注释的部分
  */
 function render(data) {
   var mylist=document.getElementById("resort");
-  for(var i=0;i<mylist.length;i++){
+  for(var i=0;i<data.length;i++){//根据数据的元素个数
     var li=document.createElement("li");
-    mylist.appendChild(li).innerText=data[0];
+    li.innerHTML="第"+(i+1)+"名："+data[i][0]+"空气质量：<b>"+data[i][1]+"</b>";
+    mylist.appendChild(li);
+    // sortAqiData(mylist);
   }
 }
 
@@ -75,12 +79,18 @@ function btnHandle() {
   render(aqiData);
 }
 
+var notClick=true;//需为全局变量
+function onlyOnce(){//只可排序显示一次
+  if(notClick){
+    btnHandle();
+    notClick=false;
+  }
+}
 function init() {
 
   // 在这下面给sort-btn绑定一个点击事件，点击时触发btnHandle函数
   var mybutton=document.getElementById("sort-btn");
-  mybutton.onclick=btnHandle();
-
+  mybutton.onclick=onlyOnce;//不要写成onlyOnce，会自动执行 ？
 }
 
 init();
