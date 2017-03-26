@@ -81,12 +81,12 @@ function btnHandle() {
 
 var notClick=true;//需为全局变量
 function onlyOnce(){//只可排序显示一次
+  if(notClick===false){
+    alert("已经排序并显示，请勿重复点击！");
+  }
   if(notClick){
     btnHandle();
     notClick=false;
-  }
-  if(notClick===false){
-    alert("已经排序并显示，请勿重复点击！");
   }
 }
 function init() {
