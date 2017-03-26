@@ -85,6 +85,9 @@ function onlyOnce(){//只可排序显示一次
     btnHandle();
     notClick=false;
   }
+  if(!notClick){
+    alert("已经排序并显示，请勿重复点击！");
+  }
 }
 function init() {
 
