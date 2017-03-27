@@ -54,13 +54,21 @@
             else {
                 alert("格式不对，请输入数字");
             }
-
         }
         function rightIn() {
             var mynumSpan=document.createElement("span");
             var myinput=document.getElementById("myinput").value;
-            mynumSpan.innerHTML=myinput.toString();
-            myqueue.appendChild(mynumSpan);//在尾部插入节点
+            if(!isNaN(myinput))//是数字
+            {
+                mynumSpan.innerHTML=myinput.toString();
+            	myqueue.appendChild(mynumSpan);//在尾部插入节点
+            }
+            else if(myinput==""){
+                alert("当前未输入任何数，请输入数字");//bug
+            }
+            else {
+                alert("格式不对，请输入数字");
+            }
         }
         function leftOut() {
 //            alert("已删除"+myqueue.firstChild.innerText);//bug 弹窗元素为节点移出以后
@@ -71,12 +79,14 @@
             var node=myqueue.removeChild(myqueue.lastChild);//移出右侧最后一个节点
             alert("已删除"+node.innerText);
         }
-        function init () {
-            myqueue.span.onclick=function () {//span js对象不支持onclick？
-                this.removeChild(this);
-            }
-        }
-        init();
+
+        // 点击队列中任何一个元素，则该元素会被从队列中删除
+		myqueue.addEventListener("click",function(e){
+		    if(event.target.nodeName.toLowerCase()=="span"){
+				// console.log(event.target);
+		        myqueue.removeChild(event.target);
+		    }
+		})
     </script>
 </body>
 </html>
