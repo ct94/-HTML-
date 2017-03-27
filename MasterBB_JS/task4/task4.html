@@ -1,0 +1,82 @@
+<!--模拟一个队列，队列的每个元素是一个数字，初始队列为空-->
+<!--有一个input输入框，以及4个操作按钮-->
+<!--点击"左侧入"，将input中输入的数字从左侧插入队列中；-->
+<!--点击"右侧入"，将input中输入的数字从右侧插入队列中；-->
+<!--点击"左侧出"，读取并删除队列左侧第一个元素，并弹窗显示元素中数值；-->
+<!--点击"右侧出"，读取并删除队列右侧第一个元素，并弹窗显示元素中数值；-->
+<!--点击队列中任何一个元素，则该元素会被从队列中删除-->
+<!--任务注意事项:-->
+<!--代码中含有必要的注释-->
+<!--需要考虑数字输入的合法性-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>task4</title>
+    <style type="text/css">
+        span{
+            color: white;background: red;
+            margin: 3px 4px;
+            padding: 3px;
+            text-align: center;
+        }
+        div{
+            margin: 3px;
+            padding: 3px;
+        }
+    </style>
+</head>
+<body>
+    <!--<script src="Double_End_Queue.js"></script>-->
+    <div>
+        <input id="myinput" width="80px" height="22px"/>
+        <button class="leftIn" onclick="leftIn()">左侧入</button>
+        <button class="rightIn" onclick="rightIn()">右侧入</button>
+        <button class="leftOut" onclick="leftOut()" style="margin-left: 20px">左侧出</button>
+        <button class="rightOut" onclick="rightOut()">右侧出</button>
+    </div>
+    <div id="queue"></div>
+    <script>
+        //类似于双端队列
+        var myqueue=document.getElementById("queue");
+        
+        function leftIn() {//创建含输入整数值的span节点
+            var mynumSpan=document.createElement("span");
+            var myinput=document.getElementById("myinput").value;
+            if(!isNaN(myinput))//是数字
+            {
+                mynumSpan.innerHTML = myinput.toString();
+                myqueue.insertBefore(mynumSpan, myqueue.firstChild);//在首个节点前插入节点
+            }
+            else if(myinput==""){
+                alert("当前未输入任何数，请输入数字");//bug
+            }
+            else {
+                alert("格式不对，请输入数字");
+            }
+
+        }
+        function rightIn() {
+            var mynumSpan=document.createElement("span");
+            var myinput=document.getElementById("myinput").value;
+            mynumSpan.innerHTML=myinput.toString();
+            myqueue.appendChild(mynumSpan);//在尾部插入节点
+        }
+        function leftOut() {
+//            alert("已删除"+myqueue.firstChild.innerText);//bug 弹窗元素为节点移出以后
+            var node=myqueue.removeChild(myqueue.firstChild);//移出左侧第一个节点
+            alert("已删除"+node.innerText);
+        }
+        function rightOut() {
+            var node=myqueue.removeChild(myqueue.lastChild);//移出右侧最后一个节点
+            alert("已删除"+node.innerText);
+        }
+        function init () {
+            myqueue.span.onclick=function () {//span js对象不支持onclick？
+                this.removeChild(this);
+            }
+        }
+        init();
+    </script>
+</body>
+</html>
