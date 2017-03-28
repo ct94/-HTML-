@@ -27,7 +27,7 @@
     </style>
 </head>
 <body>
-<script src="Double_End_Queue.js"></script>-->
+<!--<script src="Double_End_Queue.js"></script>-->
 <div>
     <input id="myinput" width="80px" height="22px"/>
     <button class="leftIn" onclick="leftIn()">左侧入</button>
@@ -43,69 +43,26 @@
     function leftIn() {//创建含输入整数值的span节点
         var mynumSpan=document.createElement("span");
         var myinput=document.getElementById("myinput").value;
-        if(myinput=="")//是数字
+        if(myinput=="")
         {
             alert("当前未输入任何数，请输入数字");
         }
-        else if(!isNaN(myinput)){
+        else if(!isNaN(myinput)){//是数字
             mynumSpan.innerHTML = myinput.toString();
             myqueue.insertBefore(mynumSpan, myqueue.firstChild);//在首个节点前插入节点
         }
         else {
             alert("格式不对，请输入数字");
-
-<script src="Double_End_Queue.js"></script>-->
-    <div>
-        <input id="myinput" width="80px" height="22px"/>
-        <button class="leftIn" onclick="leftIn()">左侧入</button>
-        <button class="rightIn" onclick="rightIn()">右侧入</button>
-        <button class="leftOut" onclick="leftOut()" style="margin-left: 20px">左侧出</button>
-        <button class="rightOut" onclick="rightOut()">右侧出</button>
-    </div>
-    <div id="queue"></div>
-    <script>
-        //类似于双端队列
-        var myqueue=document.getElementById("queue");
-        
-        function leftIn() {//创建含输入整数值的span节点
-            var mynumSpan=document.createElement("span");
-            var myinput=document.getElementById("myinput").value;
-            if(!isNaN(myinput))//是数字
-            {
-                mynumSpan.innerHTML = myinput.toString();
-                myqueue.insertBefore(mynumSpan, myqueue.firstChild);//在首个节点前插入节点
-            }
-            else if(myinput==""){
-                alert("当前未输入任何数，请输入数字");//bug
-            }
-            else {
-                alert("格式不对，请输入数字");
-            }
-        }
-        function rightIn() {
-            var mynumSpan=document.createElement("span");
-            var myinput=document.getElementById("myinput").value;
-            if(!isNaN(myinput))//是数字
-            {
-                mynumSpan.innerHTML=myinput.toString();
-            	myqueue.appendChild(mynumSpan);//在尾部插入节点
-            }
-            else if(myinput==""){
-                alert("当前未输入任何数，请输入数字");//bug
-            }
-            else {
-                alert("格式不对，请输入数字");
-            }
         }
     }
     function rightIn() {
         var mynumSpan=document.createElement("span");
         var myinput=document.getElementById("myinput").value;
-        if(myinput=="")//是数字
+        if(myinput=="")
         {
             alert("当前未输入任何数，请输入数字");
         }
-        else if(!isNaN(myinput)){
+        else if(!isNaN(myinput)){//是数字
             mynumSpan.innerHTML = myinput.toString();
             myqueue.appendChild(mynumSpan);//在尾部插入节点
         }
@@ -131,14 +88,5 @@
         }
     })
 </script>
-
-        // 点击队列中任何一个元素，则该元素会被从队列中删除
-		myqueue.addEventListener("click",function(e){
-		    if(event.target.nodeName.toLowerCase()=="span"){
-				// console.log(event.target);
-		        myqueue.removeChild(event.target);
-		    }
-		})
-    </script>
 </body>
 </html>
