@@ -1,0 +1,133 @@
+<!--限制输入的数字在10-100 理解为height-->
+<!--队列元素数量最多限制为60个，当超过60个时，添加元素时alert出提示-->
+<!--队列展现方式变化如图，直接用高度表示数字大小-->
+<!--实现一个简单的排序功能，如冒泡排序（不限制具体算法），用可视化的方法表达出来-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>task4</title>
+    <style type="text/css">
+        span{
+            color: white;background: red;
+            margin: 3px 4px;
+            padding: 3px;
+            text-align: center;
+            display: inline-block;
+            width:15px;
+            cursor:pointer;/*鼠标悬浮在span变成手型*/
+ */
+        }
+        div{
+            margin: 3px;
+            padding: 3px;
+        }
+        #mySort{
+            margin-left: 20px;
+        }
+        #queue{
+            height: 150px;
+            position: relative;
+        }
+    </style>
+</head>
+<body>
+<!--<script src="Double_End_Queue.js"></script>-->
+<div>
+    <input id="myinput" width="80px" height="22px" placeholder="请输入10-100的数字"/>
+    <button class="button" onclick="leftIn()">左侧入</button>
+    <button class="button" onclick="rightIn()">右侧入</button>
+    <button onclick="spanOut('firstChild')" style="margin-left: 20px">左侧出</button>
+    <button onclick="spanOut('lastChild')">右侧出</button>
+    <input id="mySort" type="button" value="排序" onclick="modifiedBubbleSort()"/>
+</div>
+<div id="queue"></div>
+<script type="text/javascript" src="ModifiedBubbleSort.js"></script>
+<script>
+    var myqueue=document.getElementById("queue");
+    var spanNum=0;
+    var button=document.getElementsByClassName("button");
+    var myArray=[];
+    function leftIn() {//创建含输入整数值的span节点
+        var mynumSpan=document.createElement("span");
+        var myinput=document.getElementById("myinput").value;
+        mynumSpan.style.height=myinput+"px";//输入的值赋为元素高
+        if(myinput=="")
+        {
+            alert("当前未输入任何数，请输入数字");
+        }
+        else if(9<parseInt(myinput)&&parseInt(myinput)<101){//是数字
+            if(spanNum<10)
+            {
+                myqueue.insertBefore(mynumSpan, myqueue.firstChild);
+                myArray.push(mynumSpan.style.height);//元素加入数组末尾 用于排序
+                myinput="";//插入后清空输入框内的值
+                spanNum++;
+            }//在首个节点前插入节点
+            else
+                alert("元素已超过60个");
+        }
+        else {
+            alert("格式不对，请输入10-100以内的数字");
+        }
+//        console.log(spanNum);
+    }
+    function rightIn() {
+        var mynumSpan=document.createElement("span");
+        var myinput=document.getElementById("myinput").value;
+        mynumSpan.style.height=myinput+"px";//输入的值赋为元素高
+        if(myinput=="")
+        {
+            alert("当前未输入任何数，请输入数字");
+        }
+        else if(9<parseInt(myinput)&&parseInt(myinput)<101){
+            if(spanNum<10) //要求为60，以10测验
+            {
+                myqueue.appendChild(mynumSpan);//在尾部插入节点
+                myArray.push(mynumSpan.style.height);//加入数组 用于排序
+                myinput="";//插入后清空输入框内的值
+                spanNum++;
+            }
+            else
+                alert("元素已超过60个");
+        }
+        else {
+            alert("格式不对，请输入10-100以内的数字");
+        }
+    }
+    function spanOut(child) {
+        if(myqueue[child]){
+            var node=myqueue.removeChild(myqueue[child]);//移出 节点
+            alert("已删除"+parseInt(node.style.height));
+            myArray.pop(node.style.height);//TODO 元素从数组移出 左移出使用shift，右移出使用pop
+            spanNum--;
+        }
+    }
+
+    // 点击队列中任何一个元素，则该元素会被从队列中删除
+    myqueue.addEventListener("click",function(e){
+        if(event.target.nodeName.toLowerCase()=="span"){
+            // console.log(event.target);
+            myqueue.removeChild(event.target);
+            myArray.pop(event.target.style.height);//元素从数组移出
+            spanNum--;
+        }
+    });
+
+    function modifiedBubbleSort() {
+        myArray.ModifiedBubbleSort;//排序完成
+//        console.log(myArray);
+        for(var i=0;i<myArray.length;i++){
+            myqueue.childNodes[i].style.height=myArray[i];//bug
+        }
+    }
+
+//直接在两个插入button的onclick事件方法中判断是否超过60即可
+//    button.forEach(addEventListener("click",function () {//array.foreach,every;忽略false可能会出错！
+//        if(spanNum>60) {
+//            alert("元素已超过60个");
+//        }
+//    },false));
+</script>
+</body>
+</html>
