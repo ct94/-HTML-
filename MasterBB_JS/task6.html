@@ -23,6 +23,9 @@
             word-break:break-all;
             background: #a0a0a0;
         }
+        div{
+            margin-bottom: 5px;
+        }
     </style>
 </head>
 <body>
@@ -80,17 +83,20 @@
     //当点击查询时，将查询词在各个元素内容中做模糊匹配，将匹配到的内容进行特殊标识，如文字颜色等。举例，内容中有abcd，查询词为ab或bc，则该内容需要标识
     function search() {
         var searchText=document.getElementById("searchTA").value;//输入的查询词
+        var myqueSpans=myqueue.getElementsByTagName("span");//getElementsByName区别
         var len=searchText.length;
         for(var i=0;i<len;i++){
             var searchChar=searchText.charAt(i);//模糊查找 单个匹配，而非整个单词匹配
-//            if(myqueue.innerText.indexOf(searchChar)>=0){
-            if(myqueue.innerText.match(searchChar)!=null){
-                searchRed(myqueue.innerText.match(searchChar));//BUG
+            for(var j=0;j<len;j++){
+//                if(myqueue.innerText.indexOf(searchChar)>=0){
+                    if(myqueSpans[j].innerText.match(searchChar)!=null){
+                        searchRed(myqueSpans[j]);//BUG
+                    }
             }
         }
     }
     function searchRed(item) {
-        item.style.color="red";//BUG
+        item.style.background="red";//BUG
     }
     // 点击队列中任何一个元素，则该元素会被从队列中删除
     myqueue.addEventListener("click",function(e){
