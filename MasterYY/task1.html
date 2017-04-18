@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style type="text/css">
+        button{
+            width: 50px;height: 30px;
+        }
+        body{
+            position: relative;
+        }
+        #wrap{
+            width: 400px;height: 200px;
+            position: absolute;
+            top: 50%;left: 50%;
+            transform: translate(-50%,50%);/*移动并居中*/
+            text-align: center;
+            /*display: flex;*/
+            /*display: -webkit-flex;!*chrome safari*!*/
+            /*justify-content: center;*/
+            /*align-items: center; !*在交叉轴上居中对齐*!*/
+            /*flex-wrap: wrap;*/
+        }
+        input{
+            outline: none;
+            width: 200px;height: 25px;
+            margin:0 10px 40px 30px;
+            border: solid 1px grey;
+            border-radius: 4px;
+        }
+        button{
+            color: white;background-color: #2f79ba;
+            border-radius: 5px;
+            outline: none;
+        }
+    </style>
+</head>
+<body>
+    <div id="wrap">
+        <div>
+            <span>名称</span>
+            <input type="text" onfocus="changeBorderColor('blue')" onblur="changeBorderColor('grey')">
+            <button name="submit"  type="submit">验证</button>
+
+        </div>
+
+    </div>
+    <script type="text/javascript">
+        //实现功能：通用方法，参数为颜色。当焦点在输入框上，改变边框颜色以及提示语颜色。当焦点失去，则恢复灰色。
+        function changeBorderColor(color){
+            event.target.style.borderColor=color;//事件目标的边框颜色颜色
+            console.log(event.target);
+        }
+    </script>
+</body>
+</html>
