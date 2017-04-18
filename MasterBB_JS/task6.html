@@ -1,0 +1,116 @@
+<!--基于任务四进行升级-->
+<!--将新元素输入框从input改为textarea-->
+<!--允许一次批量输入多个内容，格式可以为数字、中文、英文等，可以通过用回车，逗号（全角半角均可），顿号，空格（全角半角、Tab等均可）等符号作为不同内容的间隔-->
+<!--增加一个查询文本输入框，和一个查询按钮，-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>task6</title>
+    <style type="text/css">
+        span{
+            color: white;background: #cdcdcd;
+            margin: 3px 4px;
+            padding: 3px;
+            text-align: center;
+            cursor:pointer;
+        }
+        textarea{
+            display: inline-block;
+            width:200px;  height:70px;
+        }
+        #queue{
+            word-break:normal;
+        }
+        div{
+            margin-bottom: 5px;
+        }
+    </style>
+</head>
+<body>
+<!--<script src="Double_End_Queue.js"></script>-->
+<div>
+    <textarea id="myinput" placeholder="可输入多个内容，用回车，逗号，顿号，空格等分隔"></textarea>
+    <button class="leftIn" onclick="leftIn()">左侧入</button>
+    <button class="rightIn" onclick="rightIn()">右侧入</button>
+    <button class="leftOut" onclick="leftOut()" style="margin-left: 20px">左侧出</button>
+    <button class="rightOut" onclick="rightOut()">右侧出</button>
+    <p></p>
+</div>
+<div>
+    <textarea id="searchTA"></textarea>
+    <input value="查询" type="button" onclick="search()"/>
+    <div>showArea:</div>
+</div>
+<div id="queue"></div>
+<script>
+    //类似于双端队列
+    var myqueue=document.getElementById("queue");
+    function splitBy() {
+
+    }
+    function leftIn() {//创建含输入整数值的span节点
+
+        var myinput=document.getElementById("myinput").value;
+        if(myinput=="")
+        {
+            alert("当前未输入任何内容");
+        }
+        else {
+            //正则表达式 分隔
+            var inputVals=myinput.split(/\s+[, ， /t]*|[、 /t]+\s*/);//保存分隔后的所有输入值
+            for (var i = 0; i < inputVals.length; i++) {
+                var mySpan=document.createElement("span");
+                mySpan.innerHTML=inputVals[i];
+                myqueue.insertBefore(mySpan,myqueue.firstChild);//在首个节点前插入节点
+            }
+        }
+    }
+    function rightIn() {
+        var mynumSpan=document.createElement("span");
+        var myinput=document.getElementById("myinput").value;
+        if(myinput=="")
+        {
+            alert("当前未输入任何内容");
+        }
+        else{//TODO
+            mynumSpan.innerHTML = myinput.toString();
+            myqueue.appendChild(mynumSpan);//在尾部插入节点
+        }
+    }
+    function leftOut() {
+//            alert("已删除"+myqueue.firstChild.innerText);//bug 弹窗元素为目标节点移出以后的后一个元素
+        var node=myqueue.removeChild(myqueue.firstChild);//移出左侧第一个节点
+        alert("已删除"+node.innerText);
+    }
+    function rightOut() {
+        var node=myqueue.removeChild(myqueue.lastChild);//移出右侧最后一个节点
+        alert("已删除"+node.innerText);
+    }
+    //当点击查询时，将查询词在各个元素内容中做模糊匹配，将匹配到的内容进行特殊标识，如文字颜色等。举例，内容中有abcd，查询词为ab或bc，则该内容需要标识
+    function search() {
+        var searchText=document.getElementById("searchTA").value;//输入的查询词
+        var myqueSpans=myqueue.getElementsByTagName("span");//getElementsByName区别
+        var len=searchText.length;
+        for(var i=0;i<len;i++){
+            var searchChar=searchText.charAt(i);//模糊查找 单个匹配，而非整个单词匹配
+            for(var j=0;j<myqueSpans.length;j++){ //在所有span中匹配
+//                  if(myqueSpans[j].innerText.indexOf(searchChar)>=0){//方法二
+                    if(myqueSpans[j].innerText.match(searchChar)!=null){
+                        myqueSpans[j].style.color="red";//标识 变红
+//                        console.log(myqueSpans[j].innerHTML);
+                    }
+            }
+        }
+    }
+
+    // 点击队列中任何一个元素，则该元素会被从队列中删除
+    myqueue.addEventListener("click",function(e){
+        if(event.target.nodeName.toLowerCase()=="span"){
+            // console.log(event.target);
+            myqueue.removeChild(event.target);
+        }
+    })
+</script>
+</body>
+</html>
